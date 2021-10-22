@@ -23,12 +23,12 @@ noverlap=1828;
 vec=floor( [logspace(log10(300),log10(2000),22)/2000]*fil );               %Logarithmically spaced frequency bands are selected
 for n=1:col
     for m=1:21
-        E(m,n)= mean(abs(s(vec(m):vec(m+1),n)).^2);                        %'E' is a matrix that contains the mean energy of the 
-    end                                                                    %frequency bands of the spectrogram
+        E(m,n)= mean(abs(s(vec(m):vec(m+1),n)).^2);                        %'E' is a matrix that contains the mean energy of the
+    end                                                                    % frequency bands of the spectrogram
 end
 for n=2:col;
     for m=1:20;                                                            %'H' the Acoustic Fingerprint contains information         
-        H(m,n-1)=[E(m+1,n)-E(m,n)] > [E(m+1,n-1)-E(m,n-1)];                %about the relationship of the energy from contiguous
-    end                                                                    %frequency bands
+        H(m,n-1)=[E(m+1,n)-E(m,n)] > [E(m+1,n-1)-E(m,n-1)];                % about the relationship of the energy from contiguous
+    end                                                                    % frequency bands
 end
 end

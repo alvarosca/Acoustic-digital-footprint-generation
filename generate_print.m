@@ -1,4 +1,4 @@
-function H = generar_huella(x0)
+function H = generate_print(x0)
 
 Fs=44100;
 len=size(x0);
